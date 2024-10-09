@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RouteController;
+use App\Http\Controllers\user\libraryController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\RouteCompiler;
 
@@ -22,7 +23,7 @@ Route::middleware('auth')->group(function () {
 //raute view
 Route::get('/role/admin/dashboardAdmin/',[RouteController::class,'dashboardAdmin'])->name('dashboardAdmin');
 Route::get('/role/user/dashboardUser/',[RouteController::class,'dashboardUser'])->name('dashboardUser');
-Route::get('/role/user/dashboardUser/',[RouteController::class,'dashboardLibrary'])->name('library');
+Route::get('/role/user/library/',[libraryController::class,'dashboardLibrary'])->name('library');
 
 
 require __DIR__.'/auth.php';
