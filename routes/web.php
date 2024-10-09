@@ -22,5 +22,7 @@ Route::middleware('auth')->group(function () {
 //raute view
 Route::get('/role/admin/dashboardAdmin/',[RouteController::class,'dashboardAdmin'])->name('dashboardAdmin');
 Route::get('/role/user/dashboardUser/',[RouteController::class,'dashboardUser'])->name('dashboardUser');
+Route::get('/role/user/dashboardUser/',[RouteController::class,'dashboardLibrary'])->name('library');
+
 
 require __DIR__.'/auth.php';
