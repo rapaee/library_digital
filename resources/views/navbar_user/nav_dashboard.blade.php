@@ -45,8 +45,8 @@
         <div class="bg-white p-4 rounded shadow">
             <div class="flex items-center space-x-2">
                 <input type="text" class="border border-gray-300 p-2 flex-grow" placeholder="Search books, movies, branches, programs & more">
-                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Search</button>
-                <a href="#" class="text-blue-600 hover:underline">Advanced</a>
+                <button class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-700">Search</button>
+                <a href="#" class="text-green-500 hover:underline">Advanced</a>
             </div>
         </div>
     </main>
