@@ -1,64 +1,58 @@
-<script src="https://cdn.tailwindcss.com"></script>
-
-<nav class="bg-gray-100 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <a class="flex items-center" href="#">
-            <img src="{{ asset('img/icon.png') }}" alt="" width="80" height="60">
-        </a>
-
-        <!-- Menu burger untuk mobile -->
-        <div class="md:hidden">
-            <button id="menu-toggle" class="focus:outline-none">
-                <svg class="w-8 h-8 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-200">
+    <div class="flex fixed">
+        <div class="bg-gray-900 text-white w-64 h-screen p-4">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-book-open text-blue-500 text-2xl mr-2"></i>
+                <span class="text-xl font-semibold">Admin</span>
+            </div>
+            <ul>
+                <li class="mb-4">
+                    <a href="{{ route('dashboardAdmin') }}" class="flex  bg-gray-700 items-center p-2 rounded">
+                       
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="{{ route('buku') }}" class="flex items-center p-2">
+                        
+                        <span>Data Buku</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="flex items-center p-2">
+                     
+                        <span>Peminjaman</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="flex items-center p-2">
+                       
+                        <span>Report</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="flex items-center p-2">
+                     
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <form method="POST" action="{{ route('logout') }}" class="flex items-center p-2" onclick="this.closest('form').submit();">
+                        @csrf
+                        
+                        <span>Log out</span>
+                    </form>
+                </li>
+            </ul>
         </div>
-
-        <!-- Nav links -->
-        <nav id="menu" class="hidden md:flex space-x-4">
-            <a class="text-gray-900 underline hover:text-gray-400 font-semibold" href="{{ route('dashboardAdmin') }}">Dashboard</a>
-            <a class="text-gray-900 hover:text-gray-400 font-semibold" href="{{ route('buku') }}">Buku</a>
-            <a class="text-gray-900 hover:text-gray-400 font-semibold" href="#">Link</a>
-            <a class="text-gray-900 hover:text-gray-400 font-semibold">
-                <form method="POST" action="{{ route('logout') }}" class="block cursor-pointer" onclick="this.closest('form').submit();">
-                    @csrf
-                    <div class="" onclick="this.closest('form').submit();">
-                        <li class="list-none">
-                            Logout
-                        </li>
-                    </div>
-                </form>
-            </a>
-        </nav>
     </div>
-
-    <!-- Menu dropdown untuk tampilan mobile -->
-    <div id="mobile-menu" class="md:hidden hidden space-y-2 mt-4">
-        <a class="block text-gray-900 underline hover:text-gray-400 font-semibold" href="{{ route('dashboardAdmin') }}">Dashboard</a>
-        <a class="block text-gray-900 hover:text-gray-400 font-semibold" href="{{ route('buku') }}">buku</a>
-        <a class="block text-gray-900 hover:text-gray-400 font-semibold" href="#">Link</a>
-        <a class="block text-gray-900 hover:text-gray-400 font-semibold">
-            <form method="POST" action="{{ route('logout') }}" class="block cursor-pointer" onclick="this.closest('form').submit();">
-                @csrf
-                <div class="" onclick="this.closest('form').submit();">
-                    <li class="list-none">
-                        Logout
-                    </li>
-                </div>
-            </form>
-        </a>
-    </div>
-</nav>
-
-<script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-</script>
-
-@yield('navbar_admin')
+</body>
+</html>
+<div class="flex-1 p-10">
+    @yield('navbar_admin')
+</div>

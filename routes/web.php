@@ -23,11 +23,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//raute view
+//route view
 Route::get('/role/admin/dashboardAdmin/',[dashboardController::class,'dashboardAdmin'])->name('dashboardAdmin');
 Route::get('/role/admin/buku/',[bukuController::class,'bukuAdmin'])->name('buku');
 Route::get('/role/user/dashboardUser/',[UserDashboardController::class,'dashboardUser'])->name('dashboardUser');
 Route::get('/role/user/library/',[libraryController::class,'dashboardLibrary'])->name('library');
+
+//inputan buku
+Route::get('/role/admin/input_buku/',[bukuController::class,'create'])->name('input_buku');
+Route::post('/role/admin/input_buku', [BukuController::class, 'store'])->name('input.buku');
 
 
 require __DIR__.'/auth.php';
