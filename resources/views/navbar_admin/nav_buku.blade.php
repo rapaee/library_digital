@@ -17,8 +17,8 @@
 
         <!-- Nav links -->
         <nav id="menu" class="hidden md:flex space-x-4">
-            <a class="text-gray-900 underline hover:text-gray-400 font-semibold" href="{{ route('dashboardAdmin') }}">Dashboard</a>
-            <a class="text-gray-900 hover:text-gray-400 font-semibold" href="{{ route('buku') }}">Buku</a>
+            <a class="text-gray-900  hover:text-gray-400 font-semibold" href="{{ route('dashboardAdmin') }}">Dashboard</a>
+            <a class="text-gray-900 underline hover:text-gray-400 font-semibold" href="{{ route('buku') }}">Buku</a>
             <a class="text-gray-900 hover:text-gray-400 font-semibold" href="#">Link</a>
             <a class="text-gray-900 hover:text-gray-400 font-semibold">
                 <form method="POST" action="{{ route('logout') }}" class="block cursor-pointer" onclick="this.closest('form').submit();">
@@ -36,7 +36,7 @@
     <!-- Menu dropdown untuk tampilan mobile -->
     <div id="mobile-menu" class="md:hidden hidden space-y-2 mt-4">
         <a class="block text-gray-900 underline hover:text-gray-400 font-semibold" href="{{ route('dashboardAdmin') }}">Dashboard</a>
-        <a class="block text-gray-900 hover:text-gray-400 font-semibold" href="{{ route('buku') }}">buku</a>
+        <a class="block text-gray-900 hover:text-gray-400 font-semibold" href="#">Link</a>
         <a class="block text-gray-900 hover:text-gray-400 font-semibold" href="#">Link</a>
         <a class="block text-gray-900 hover:text-gray-400 font-semibold">
             <form method="POST" action="{{ route('logout') }}" class="block cursor-pointer" onclick="this.closest('form').submit();">

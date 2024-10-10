@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\user;
+namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class dashboardController extends Controller
 {
-    public function dashboardUser(){
-        return view('role.user.dashboardUser');
+    public function dashboardAdmin(){
+        return view('role.admin.dashboardAdmin');
     }
-   
 }
