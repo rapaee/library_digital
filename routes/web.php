@@ -32,6 +32,11 @@ Route::get('/role/user/library/',[libraryController::class,'dashboardLibrary'])-
 //inputan buku
 Route::get('/role/admin/input_buku/',[bukuController::class,'create'])->name('input_buku');
 Route::post('/role/admin/input_buku', [BukuController::class, 'store'])->name('input.buku');
+Route::get('/buku/{id}/edit', [bukuController::class, 'edit'])->name('edit.buku');
+Route::put('/buku/{id}/', [bukuController::class, 'update'])->name('update.buku');
+Route::delete('buku/{id}', [bukuController::class,'destroy'])->name('delete.buku');
+
+
 
 
 require __DIR__.'/auth.php';

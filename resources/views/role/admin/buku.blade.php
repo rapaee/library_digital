@@ -27,6 +27,7 @@
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Genre</th>
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Stok</th>
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Gambar</th>
+                <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -40,8 +41,22 @@
                 <td class="text-center py-3 border border-gray-300">{{ $item->kode_buku }}</td>
                 <td class="text-center py-3 border border-gray-300">{{ $item->genre->genre }}</td>
                 <td class="text-center py-3 border border-gray-300">{{ $item->stok }}</td>
+                <td class="flex justify-center py-3 border border-gray-300">
+                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="" style="max-width: 50px; max-height: 50px;" class="">
+                </td>
                 <td class="text-center py-3 border border-gray-300">
-                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" style="max-width: 100px; max-height: 100px;">
+                    <div class="flex justify-center space-x-2">
+                        <form action="{{ route('delete.buku', $item->id) }}" method="post" class="inline-flex items-center delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?')" class="text-red-500 hover:text-red-700 flex items-center delete-button">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                        <a href="{{ route('edit.buku', $item->id) }}" class="text-gray-600 hover:text-gray-700 flex items-center edit-button">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
                 </td>
             </tr>
             @endforeach

@@ -52,5 +52,70 @@ class bukuController extends Controller
             return redirect()->route('input_buku')->with('error', 'Gagal menambahkan produk: ' . $e->getMessage());
         }
     }
+    public function edit($id)
+    {
+        // Mengambil data buku berdasarkan ID
+        $buku = buku::findOrFail($id);
+        
+        // Mengambil semua genre
+        $genre = genre::all();
+        
+        // Mengembalikan view dengan data buku dan semua genre
+        return view('role/admin/edit_buku', compact('genre', 'buku'));
+    }
+    
+       
+    public function update(Request $request, $id)
+    {
+        // Validasi input
+        $request->validate([
+            'judul' => 'required|string',
+            'penulis' => 'required|string',
+            'penerbit' => 'required|string',
+            'kode_buku' => 'required|numeric',
+            'id_genre' => 'required|exists:genre,id',
+            'stok' => 'required|numeric',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // gambar tidak wajib
+        ]);
+    
+        try {
+            // Mengambil data buku berdasarkan ID
+            $buku = buku::findOrFail($id);
+    
+            // Mengupdate data buku
+            $buku->judul = $request->judul;
+            $buku->penulis = $request->penulis;
+            $buku->penerbit = $request->penerbit;
+            $buku->kode_buku = $request->kode_buku;
+            $buku->id_genre = $request->id_genre; // Pastikan menggunakan id_genre
+            $buku->stok = $request->stok;
+    
+            // Jika ada gambar yang diupload, simpan gambar tersebut
+            if ($request->hasFile('gambar')) {
+                $gambar = $request->file('gambar');
+                $path = $gambar->store('images', 'public'); // Simpan di direktori 'storage/images'
+                $buku->gambar = $path; // Menyimpan path gambar ke database
+            }
+    
+            $buku->save();
+    
+            // Redirect ke halaman data-buku dengan pesan sukses
+            return redirect()->route('buku')->with('success', 'Berhasil mengupdate buku');
+        } catch (\Exception $e) {
+            // Redirect kembali ke form dengan pesan error
+            return redirect()->route('edit.buku', $id)->with('fail', 'Gagal mengupdate buku: ' . $e->getMessage());
+        }
+    }
+    public function destroy($id)
+    {
+        $buku = buku::find($id);
+        if ($buku) {
+            $buku->delete();
+            return redirect()->route('buku')->with('success', 'Data barang berhasil dihapus');
+        } else {
+            return redirect()->route('buku')->with('error', 'Data barang tidak ditemukan');
+        }
+    }
+
     
 }
