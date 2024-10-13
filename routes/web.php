@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\bukuController;
 use App\Http\Controllers\admin\dashboardController;
+use App\Http\Controllers\admin\peminjamanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\user\dashboardController as UserDashboardController;
@@ -26,6 +27,9 @@ Route::middleware('auth')->group(function () {
 //route view
 Route::get('/role/admin/dashboardAdmin/',[dashboardController::class,'dashboardAdmin'])->name('dashboardAdmin');
 Route::get('/role/admin/buku/',[bukuController::class,'bukuAdmin'])->name('buku');
+Route::get('/role/admin/peminjaman/',[peminjamanController::class,'index'])->name('peminjaman');
+
+
 Route::get('/role/user/dashboardUser/',[UserDashboardController::class,'dashboardUser'])->name('dashboardUser');
 Route::get('/role/user/library/',[libraryController::class,'dashboardLibrary'])->name('library');
 

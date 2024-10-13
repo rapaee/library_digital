@@ -12,19 +12,19 @@
             </div>
             <ul>
                 <li class="mb-4">
-                    <a href="{{ route('dashboardAdmin') }}" class="flex items-center p-2 rounded">
+                    <a href="{{ route('dashboardAdmin') }}" class="flex  items-center p-2 rounded">
                        
                         <span>Dashboard</span>
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="{{ route('buku') }}" class="flex bg-gray-700 items-center p-2">
+                    <a href="{{ route('buku') }}" class="flex items-center p-2">
                         
                         <span>Data Buku</span>
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="{{ route('peminjaman') }}" class="flex items-center p-2">
+                    <a href="{{ route('peminjaman') }}" class="flex  bg-gray-700 items-center p-2">
                      
                         <span>Peminjaman</span>
                     </a>

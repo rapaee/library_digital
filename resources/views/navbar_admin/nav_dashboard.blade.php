@@ -3,7 +3,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body class="bg-gray-200">
+<body class="">
     <div class="flex fixed">
         <div class="bg-gray-900 text-white w-64 h-screen p-4">
             <div class="flex items-center mb-8">
@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="#" class="flex items-center p-2">
+                    <a href="{{ route('peminjaman') }}" class="flex items-center p-2">
                      
                         <span>Peminjaman</span>
                     </a>
