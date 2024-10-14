@@ -116,6 +116,11 @@ class bukuController extends Controller
             return redirect()->route('buku')->with('error', 'Data barang tidak ditemukan');
         }
     }
+    public function show($id)
+{
+    $book = buku::findOrFail($id); // Mengambil detail buku berdasarkan ID
+    return view('role/user/show', compact('book'));
+}
 
     
 }

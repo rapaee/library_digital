@@ -41,6 +41,12 @@ Route::put('/buku/{id}/', [bukuController::class, 'update'])->name('update.buku'
 Route::delete('buku/{id}', [bukuController::class,'destroy'])->name('delete.buku');
 
 
+// detail buku
+Route::get('/books/{id}', [BukuController::class, 'show'])->name('show');
+
+
+
+
 
 
 require __DIR__.'/auth.php';
