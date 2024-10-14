@@ -103,6 +103,56 @@
                 </div>
             </div>
         </section>
+        <!-- Footer -->
+<footer class="bg-blue-900 text-white w-auto py-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div>
+            <h3 class="font-bold mb-4">About the Library</h3>
+            <ul>
+                <li><a href="#" class="hover:underline">Doing Business with the Library</a></li>
+                <li><a href="#" class="hover:underline">Vision, Mission & Values</a></li>
+                <li><a href="#" class="hover:underline">Customer Feedback Standards</a></li>
+                <li><a href="#" class="hover:underline">History of the Library</a></li>
+                <li><a href="#" class="hover:underline">Library Board</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-bold mb-4">Jobs at the Library</h3>
+            <ul>
+                <li><a href="#" class="hover:underline">Open Data</a></li>
+                <li><a href="#" class="hover:underline">Young Voices Magazine</a></li>
+                <li><a href="#" class="hover:underline">Library Policies & Terms of Use</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-bold mb-4">Media & News</h3>
+            <ul>
+                <li><a href="#" class="hover:underline">Media Contacts</a></li>
+                <li><a href="#" class="hover:underline">City Librarian Updates</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-bold mb-4">Accessibility</h3>
+            <ul>
+                <li><a href="#" class="hover:underline">Accessibility at Library Branches</a></li>
+                <li><a href="#" class="hover:underline">Accessible Collections</a></li>
+                <li><a href="#" class="hover:underline">AODA Compliance</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="font-bold mb-4">Support Your Library</h3>
+            <ul>
+                <li><a href="#" class="hover:underline">TPL Foundation</a></li>
+                <li><a href="#" class="hover:underline">Donate Books</a></li>
+                <li><a href="#" class="hover:underline">Friends of the Library</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mx-auto text-center mt-8">
+        <p>All content © 2024 Toronto Public Library. All rights reserved.</p>
+    </div>
+</footer>
+
 </body>
 </html>
 @endsection
