@@ -33,7 +33,7 @@
             <div class="container mx-auto flex justify-between items-center py-2 px-4">
                 <a href="{{ route('dashboardUser') }}" class="hover:underline">Dashboard</a>
                 <a href="{{ route('library') }}" class="hover:underline">Gallery</a>
-                <a href="#" class="hover:underline">Programs</a>
+                <a href="{{ route('education') }}" class="hover:underline">Education</a>
                 <a href="#" class="hover:underline">Locations</a>
                 <a href="#" class="hover:underline">Using the Library</a>
                 <a href="#" class="hover:underline">Teens</a>
@@ -70,42 +70,42 @@
         <div>
             <h3 class="font-bold mb-4">About the Library</h3>
             <ul>
-                <li><a href="#" class="hover:underline">Doing Business with the Library</a></li>
-                <li><a href="#" class="hover:underline">Vision, Mission & Values</a></li>
-                <li><a href="#" class="hover:underline">Customer Feedback Standards</a></li>
-                <li><a href="#" class="hover:underline">History of the Library</a></li>
-                <li><a href="#" class="hover:underline">Library Board</a></li>
+              <p>Doing Business with the Library</p> 
+                <p>Vision, Mission & Values</p>
+                <p>Customer Feedback Standards</p>
+                <p>History of the Library</p
+                <p>Library Board</p>
             </ul>
         </div>
         <div>
             <h3 class="font-bold mb-4">Jobs at the Library</h3>
             <ul>
-                <li><a href="#" class="hover:underline">Open Data</a></li>
-                <li><a href="#" class="hover:underline">Young Voices Magazine</a></li>
-                <li><a href="#" class="hover:underline">Library Policies & Terms of Use</a></li>
+                <p>Open Data</p>
+               <p>Young Voices Magazine</p>
+                <p>Library Policies & Terms of Use</p>
             </ul>
         </div>
         <div>
             <h3 class="font-bold mb-4">Media & News</h3>
             <ul>
-                <li><a href="#" class="hover:underline">Media Contacts</a></li>
-                <li><a href="#" class="hover:underline">City Librarian Updates</a></li>
+                <p>Accessible Collections</p>
+                <p>Accessible Collections</p>
             </ul>
         </div>
         <div>
             <h3 class="font-bold mb-4">Accessibility</h3>
             <ul>
-                <li><a href="#" class="hover:underline">Accessibility at Library Branches</a></li>
-                <li><a href="#" class="hover:underline">Accessible Collections</a></li>
-                <li><a href="#" class="hover:underline">AODA Compliance</a></li>
+                <p></p>
+                <p></p>
+                <p></p>
             </ul>
         </div>
         <div>
             <h3 class="font-bold mb-4">Support Your Library</h3>
             <ul>
-                <li><a href="#" class="hover:underline">TPL Foundation</a></li>
-                <li><a href="#" class="hover:underline">Donate Books</a></li>
-                <li><a href="#" class="hover:underline">Friends of the Library</a></li>
+                <p></p>
+                <p></p>
+                <p></p>
             </ul>
         </div>
     </div>

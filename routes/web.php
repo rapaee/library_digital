@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\bukuController;
 use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\peminjamanController;
+use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RouteController;
 use App\Http\Controllers\user\dashboardController as UserDashboardController;
@@ -32,6 +33,7 @@ Route::get('/role/admin/peminjaman/',[peminjamanController::class,'index'])->nam
 
 Route::get('/role/user/dashboardUser/',[UserDashboardController::class,'dashboardUser'])->name('dashboardUser');
 Route::get('/role/user/library/',[libraryController::class,'dashboardLibrary'])->name('library');
+route::get('/role/user/education/',[EducationController::class,'Education'])->name('education');
 
 //inputan buku
 Route::get('/role/admin/input_buku/',[bukuController::class,'create'])->name('input_buku');
