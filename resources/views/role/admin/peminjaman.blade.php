@@ -11,7 +11,9 @@
     @section('navbar_admin')
         <div class="ml-64">
             <h1>Data Peminjaman</h1>
-            <button class="bg-sky-500 text-white p-2  rounded flex ml-auto justify-end mb-4">Tambah</button>
+            <button class="bg-sky-500 text-white p-2  rounded flex ml-auto justify-end mb-4">
+                <a href="">Tambah</a>
+            </button>
              <!-- Date Picker with Auto Submit -->
              <div class="flex justify-center mb-4">
                 <form id="filterForm" action="" method="GET" class="flex w-full">
