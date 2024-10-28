@@ -11,7 +11,7 @@
     @vite('resources/css/app.css')
 </head>
 <body class="bg-gray-100 p-5">
-    <div class="container mx-auto max-w-4xl bg-white p-5 rounded-lg shadow-lg">
+    <div class="container mx-auto max-w-4xl bg-white p-5 rounded-lg shadow-lg mb-10">
         <h1 class="text-center text-3xl font-bold mb-5">{{ $book->judul }}</h1>
         
         <!-- Kontainer untuk Gambar dan Detail Buku -->
@@ -22,14 +22,14 @@
             </div>
             
             <!-- Detail Buku -->
-            <div class="text-gray-700 ml-96 text-lg  ">
+            <div class="text-gray-700 text-lg  ">
                 <p class="mb-5"><strong>Penulis:</strong> {{ $book->penulis }}</p>
                 <p class="mb-5"><strong>Penerbit:</strong> {{ $book->penerbit }}</p>
                 <p class="mb-5"><strong>Genre:</strong> {{ $book->genre->genre }}</p>
                 <p class="mb-36"><strong>Kode Buku:</strong> {{ $book->kode_buku }}</p>
                 
                 <!-- Tombol Booking -->
-                <a href="">Booking</a>
+                <a href="" class="bg-green-800 hover:bg-green-700 text-white p-2 rounded">Booking</a>
             </div>
         </div>
 
