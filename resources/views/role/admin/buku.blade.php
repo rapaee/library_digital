@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    @extends('navbar_admin.nav_buku')
+    @extends('navbar_admin.nav_dashboard')
     @section('navbar_admin')
     <h1 class="ml-64">Data Buku</h1>
     <button class="flex justify-end items-end ml-auto  mr-4 bg-slate-800 rounded text-white p-2 mb-4">
@@ -27,6 +27,7 @@
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Genre</th>
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Stok</th>
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Gambar</th>
+                <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Sinopsis</th>
                 <th class="px-2 py-3 border border-gray-300 text-center text-sm font-semibold text-gray-600 ">Action</th>
             </tr>
         </thead>
@@ -44,6 +45,7 @@
                 <td class="flex justify-center py-3 border border-gray-300">
                     <img src="{{ asset('storage/' . $item->gambar) }}" alt="" style="max-width: 50px; max-height: 50px;" class="">
                 </td>
+                <td class="text-center py-3 border border-gray-300">###</td>
                 <td class="text-center py-3 border border-gray-300">
                     <div class="flex justify-center space-x-2">
                         <form action="{{ route('delete.buku', $item->id) }}" method="post" class="inline-flex items-center delete-form">

@@ -4,7 +4,6 @@ use App\Http\Controllers\admin\bukuController;
 use App\Http\Controllers\admin\dashboardController;
 use App\Http\Controllers\admin\peminjamanController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RouteController;
 use App\Http\Controllers\user\dashboardController as UserDashboardController;
 use App\Http\Controllers\user\libraryController;
 use Illuminate\Support\Facades\Route;

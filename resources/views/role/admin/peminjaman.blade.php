@@ -7,7 +7,7 @@
     <title>Peminjaman</title>
 </head>
 <body>
-    @extends('navbar_admin.nav_peminjaman')
+    @extends('navbar_admin.nav_dashboard')
     @section('navbar_admin')
         <div class="ml-64">
             <h1>Data Peminjaman</h1>

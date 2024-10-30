@@ -1,4 +1,4 @@
-@extends('navbar_admin.nav_buku')
+@extends('navbar_admin.nav_dashboard')
 
 @section('navbar_admin')
 <div class="container mx-auto ml-24">
@@ -89,9 +89,27 @@
             @error('gambar')
                 <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
             @enderror
-        </div>        
+        </div>   
+        
+        <div class="form-group mb-4">
+            <label for="sinopsis" class="block text-gray-700 text-sm font-bold mb-2">Sinopsis</label>
+            <input type="text" class="form-control border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500" id="sinopsis" name="sinopsis" value="{{ old('sinopsis', $buku->sinopsis) }}" required>
+            @error('sinopsis')
+                <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+            @enderror
+        </div>
 
-        <button type="submit" value="Update" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 flex justify-end ml-auto rounded">Submit</button>
+        <div class="flex justify-end space-x-4"> <!-- Menambahkan space-x-4 untuk jarak antar tombol -->
+            <a href="{{ route('buku') }}">
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Cancel
+                </button>
+            </a>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Submit
+            </button>
+        </div>
+
     </form>
 </div>
 @endsection

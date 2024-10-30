@@ -27,32 +27,21 @@
         <h2 class="text-3xl font-bold mb-4">Featured</h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <!-- Card 1 -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="{{ asset('gambar/buku1.jpg') }}" alt="Real Image" class="w-full h-auto">
-                <h3 class="font-bold text-lg mb-2">Special Collections</h3>
-                <p class="text-sm">Preserving "dummy books" of Harry the Dirty Dog.</p>
-            </div>
+            @if (!empty($book) && $book->count() > 0)
+            @foreach ($book as $item)
+                <a href="{{ route('show', $item->id) }}" class="bg-white p-4 rounded-lg shadow-md">
+                    <div>
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="Real Image" class="w-full h-auto">
+                        <h3 class="font-bold text-lg mb-2">Special Collections</h3>
+                        <p class="text-sm">Preserving "dummy books" of Harry the Dirty Dog.</p>
+                    </div>
+                </a>
+            @endforeach
+            @else
+            <p>Tidak Ada Data Buku Ditemukan</p>
+            @endif
 
-            <!-- Card 2 -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="{{ asset('gambar/Sophie.jpg') }}" alt="Real Image" class="w-full h-3/4">
-                <h3 class="font-bold text-lg mb-2">Kids</h3>
-                <p class="text-sm">Design a bookmark.</p>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="{{ asset('gambar/Mua .jpg') }}" alt="Real Image" class="w-full h-3/4">
-                <h3 class="font-bold text-lg mb-2">Booklist</h3>
-                <p class="text-sm">October's biggest books to borrow.</p>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <img src="{{ asset('gambar/Whitecollar.jpg') }}" alt="Real Image" class="w-full h-3/4">
-                <h3 class="font-bold text-lg mb-2">Online Services</h3>
-                <p class="text-sm">Class is in session with Gale Courses.</p>
-            </div>
+           
         </div>
     </section>
 
@@ -76,31 +65,54 @@
                 </div>
     
                 <!-- Maud's World Program -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                    <img src="{{ asset('gambar/Dilan.jpg') }}" alt="Maud's World" class="rounded-lg mb-2" style="width: 200px">
-                    <h4 class="text-xl font-bold mb-2">Dilan 1990:  Dia adalah Dilanku Tahun 1990 </h4>
-                    <p class="text-sm mb-2">Mon Sep 09, 2024 - Sun Dec 01, 2024</p>
-                    <p class="text-gray-700">Publisher: Pastel Books</p>
-                    <p class="text-gray-600">Synopsis: kisah cinta remaja antara Milea dan Dilan, seorang anak geng motor yang nakal namun romantis. Dengan gaya unik dan penuh kejutan, Dilan berhasil menarik perhatian Milea, meski hubungan mereka diwarnai konflik dan tantangan masa muda.</p>
-                </div>
-    
-                <!-- Entrepreneur Program -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                    <img src="{{ asset('gambar/aretha.jpg') }}" alt="Aretha" class="rounded-lg mb-4" style="width: 200px">
-                    <h4 class="text-xl font-bold mb-2">Entrepreneur in Residence: The Meet & Greet</h4>
-                    <p class="text-sm mb-2">Wed Oct 09, 2024 | 6:00 pm - 7:30 pm</p>
-                    <p class="text-gray-700">Location: Toronto Reference Library</p>
-                    <p class="text-gray-600">Join us for this interactive kick-off event to learn more about Anshula Chowdhury.</p>
-                </div>
-    
-                <!-- Autism Employment Program -->
-                <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
-                    <img src="{{ asset('gambar/buku3.jpg') }}" alt="Autism Employment" class="rounded-lg mb-4" style="width: 200px">
-                    <h4 class="text-xl font-bold mb-2">Autism Employment Resource Day</h4>
-                    <p class="text-sm mb-2">Wed Oct 09, 2024 | 12:30 pm - 4:00 pm</p>
-                    <p class="text-gray-700">Location: North York Central Library</p>
-                    <p class="text-gray-600">Connect with employment services and other resources at this sensory-aware event!</p>
-                </div>
+                @if (!empty($book) && $book->count() > 0)
+                @foreach ($book as $item)
+                @if ($item->id == 1)  {{-- Tambahkan kondisi ini --}}
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="Maud's World" class="rounded-lg mb-2" style="width: 200px">
+                        <h4 class="text-xl font-bold mb-2">{{$item->judul}}</h4>
+                        <p class=" mb-2">Penulis: {{ $item->penulis }}</p>
+                        <p class="text-gray-700">Penerbit: {{ $item->penerbit }}</p>
+                        <p class="text-gray-600">Synopsis: {{$item->sinopsis}}</p>
+                    </div>
+                @endif
+                @endforeach
+                @else
+                    <p>Tidak Ada Data Buku Ditemukan</p>
+                @endif
+
+                @if (!empty($book) && $book->count() > 0)
+                @foreach ($book as $item)
+                @if ($item->id == 2)  {{-- Tambahkan kondisi ini --}}
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="Maud's World" class="rounded-lg mb-2" style="width: 200px">
+                        <h4 class="text-xl font-bold mb-2">{{$item->judul}}</h4>
+                        <p class="text-sm mb-2">Mon Sep 09, 2024 - Sun Dec 01, 2024</p>
+                        <p class="text-gray-700">Publisher: Pastel Books</p>
+                        <p class="text-gray-600">Synopsis: kisah cinta remaja antara Milea dan Dilan, seorang anak geng motor yang nakal namun romantis. Dengan gaya unik dan penuh kejutan, Dilan berhasil menarik perhatian Milea, meski hubungan mereka diwarnai konflik dan tantangan masa muda.</p>
+                    </div>
+                @endif
+                @endforeach
+                @else
+                    <p>Tidak Ada Data Buku Ditemukan</p>
+                @endif
+
+                @if (!empty($book) && $book->count() > 0)
+                @foreach ($book as $item)
+                @if ($item->id == 3)  {{-- Tambahkan kondisi ini --}}
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <img src="{{ asset('storage/' . $item->gambar) }}" alt="Maud's World" class="rounded-lg mb-2" style="width: 200px">
+                        <h4 class="text-xl font-bold mb-2">{{$item->judul}}</h4>
+                        <p class="text-sm mb-2">Mon Sep 09, 2024 - Sun Dec 01, 2024</p>
+                        <p class="text-gray-700">Publisher: Pastel Books</p>
+                        <p class="text-gray-600">Synopsis: {{$item->sinopsis}}</p>
+                    </div>
+                @endif
+                @endforeach
+                @else
+                    <p>Tidak Ada Data Buku Ditemukan</p>
+                @endif
+
             </div>
         </section>
         <!-- Footer -->

@@ -1,4 +1,4 @@
-@extends('navbar_admin.nav_buku')
+@extends('navbar_admin.nav_dashboard')
 
 @section('navbar_admin')
 <div class="container mx-auto ml-24">
@@ -77,7 +77,15 @@
             @error('gambar')
                 <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
             @enderror
-        </div>        
+        </div>    
+
+        <div class="form-group mb-4">
+            <label for="sinopsis" class="block text-gray-700 text-sm font-bold mb-2">Sinopsis</label>
+            <input type="text" class="form-control border rounded w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500" id="sinopsis" name="sinopsis" value="{{ old('sinopsis') }}" placeholder="Masukan Sinopsis Anda" required>
+            @error('sinopsis')
+                <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+            @enderror
+        </div>
 
        <div class="flex">
         <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 flex justify-end ml-[1135px] rounded">

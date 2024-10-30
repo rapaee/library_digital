@@ -28,6 +28,7 @@ class bukuController extends Controller
             'id_genre' => 'required|exists:genre,id',
             'stok' => 'required|numeric',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'sinopsis' => 'required|string',
         ]);
     
         try {
@@ -43,6 +44,7 @@ class bukuController extends Controller
             $new_product->id_genre = $request->id_genre; // Pastikan menggunakan id_genre
             $new_product->stok = $request->stok;
             $new_product->gambar = $path; // Menyimpan path gambar ke database
+            $new_product->sinopsis = $request->sinopsis;
             $new_product->save();
     
             // Redirect ke halaman data-barang dengan pesan sukses
@@ -75,7 +77,8 @@ class bukuController extends Controller
             'kode_buku' => 'required|numeric',
             'id_genre' => 'required|exists:genre,id',
             'stok' => 'required|numeric',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // gambar tidak wajib
+            'gambar' => '|image|mimes:jpeg,png,jpg,gif,svg|max:2048', // gambar tidak wajib
+            'sinopsis' => 'required|string',
         ]);
     
         try {
@@ -89,6 +92,7 @@ class bukuController extends Controller
             $buku->kode_buku = $request->kode_buku;
             $buku->id_genre = $request->id_genre; // Pastikan menggunakan id_genre
             $buku->stok = $request->stok;
+            $buku->sinopsis = $request->sinopsis;
     
             // Jika ada gambar yang diupload, simpan gambar tersebut
             if ($request->hasFile('gambar')) {

@@ -9,14 +9,10 @@ use Illuminate\Http\Request;
 class dashboardController extends Controller
 {
     public function dashboardUser(){
-        return view('role.user.dashboardUser');
+        $book = buku::whereIn('id', [1,2,3,4])->get();
+        return view('role.user.dashboardUser', compact('book'));
     }
 
-    public function showFeatured()
-    {
-        $featuredBook = buku::inRandomOrder()->first(); // Fetch a random book
-        return view('role.user.dashboardUser', compact('featuredBook'));
-    }
     
    
 }

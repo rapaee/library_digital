@@ -31,6 +31,7 @@ return new class extends Migration
             $table->foreignId('id_genre')->constrained('genre')->onDelete('cascade');
             $table->integer('stok');
             $table->string('gambar');
+            $table->string('sinopsis');
             $table->timestamps();
         });
 

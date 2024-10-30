@@ -31,15 +31,18 @@
         </div>
         <nav class="bg-amber-400 sm:block" id="navbar">
             <div class="container mx-auto flex justify-between items-center py-2 px-4">
-                <a href="{{ route('dashboardUser') }}" class="hover:underline">Dashboard</a>
-                <a href="{{ route('library') }}" class="hover:underline">Gallery</a>
-                <a href="#" class="hover:underline">Programs</a>
-                <a href="#" class="hover:underline">Locations</a>
-                <a href="#" class="hover:underline">Using the Library</a>
-                <a href="#" class="hover:underline">Teens</a>
-                <a href="#" class="hover:underline">Kids</a>
+                <a href="{{ route('dashboardUser') }}" 
+                class="hover:underline {{ Route::currentRouteName() == 'dashboardUser' ? 'text-green-600' : '' }}">Dashboard</a>
+                <a href="{{ route('library') }}" 
+                class="hover:underline {{ Route::currentRouteName() == 'library' ? 'text-green-600' : '' }}">Gallery</a>
+                <a href="#" class="hover:underline {{ request()->is('programs') ? 'text-green-600' : '' }}">Programs</a>
+                <a href="#" class="hover:underline {{ request()->is('locations') ? 'text-green-600' : '' }}">Locations</a>
+                <a href="#" class="hover:underline {{ request()->is('using-library') ? 'text-green-600' : '' }}">Using the Library</a>
+                <a href="#" class="hover:underline {{ request()->is('teens') ? 'text-green-600' : '' }}">Teens</a>
+                <a href="#" class="hover:underline {{ request()->is('kids') ? 'text-green-600' : '' }}">Kids</a>
             </div>
         </nav>
+
     </header>
     <main class="container mx-auto py-8 px-4">
         <div class="bg-white p-4 rounded shadow">
